@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Sample.GraphQL.DataModel\Sample.GraphQL.Persistence.csproj" />
     <ProjectReference Include="..\..\Sample.GraphQL.Domain\Sample.GraphQL.Domain.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Sample.GraphQL.Persistence.Context;
 
 
 namespace Sample.GraphQL.Application
@@ -9,7 +10,9 @@ namespace Sample.GraphQL.Application
         {
             services
             .AddGraphQLServer()
-            .AddQueryType<ShowtimesQuery>();
+            .RegisterDbContext<CinemaDbContext>()
+            .AddQueryType<ShowtimesQuery>()
+            .AddFiltering(); 
 
             return services;
 
