@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Sample.GraphQL.DataModel\Sample.GraphQL.Persistence.csproj" />
     <ProjectReference Include="..\Sample.GraphQL.Application\Sample.GraphQL.Application.csproj" />
+    <ProjectReference Include="..\Sample.GraphQL.DataModel\Sample.GraphQL.Persistence.csproj" />
   </ItemGroup>
 
 </Project>
