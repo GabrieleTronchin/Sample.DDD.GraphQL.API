@@ -11,7 +11,7 @@ When you start the app, you can use the built-in GraphQL playground by accessing
 
 Here's an image of what you'll find:
 
-![GraphQL Playground](.\assets\graphQLPage.png)
+![GraphQL Playground](assets\graphQLPage.png)
 
 ## Selecting and Expanding
 
@@ -27,7 +27,7 @@ To create your first GraphQL query, you can use the following example:
     }
   } 
 }
-
+```
 
 ## Filtering
 
