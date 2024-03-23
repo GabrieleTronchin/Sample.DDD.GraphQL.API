@@ -11,7 +11,7 @@ When you start the app, you can use the built-in GraphQL playground by accessing
 
 Here's an image of what you'll find:
 
-![GraphQL Playground](.\assets\SchemaReference.png)
+![GraphQL Playground](assets/SchemaReference.png)
 
 ## Selecting and Expanding
 
@@ -41,7 +41,7 @@ Where All is the name of the entity in GraphQL.
 
 Here's a sample of the result:
 
-![GraphQL Playground](.\assets\SampleResult1.png)
+![GraphQL Playground](assets/SampleResult1.png)
 
 ## Filtering
 
@@ -82,7 +82,7 @@ query {
 Here's a sample of the result:
 
 
-![GetAll](.\assets\SchemaReference.png)
+![GetAll](assets/SchemaReference.png)
 
 You can refer to the Hot Chocolate documentation for guidance on implementing filtering: [Hot Chocolate - Fetching Data: Filtering](https://chillicream.com/docs/hotchocolate/v13/fetching-data/filtering)
 
@@ -119,7 +119,7 @@ query {
   }
 }
 ```
-![Page1](.\assets\Pagination_Page1.png)
+![Page1](assets/Pagination_Page1.png)
 
 Page 2:
 ```graphql
@@ -149,6 +149,6 @@ query {
 }
 ```
 
-![Page1](.\assets\Pagination_Page2.png)
+![Page1](assets/Pagination_Page2.png)
 
 For more information on pagination in GraphQL, you can visit [GraphQL Pagination](https://graphql.org/learn/pagination/)
