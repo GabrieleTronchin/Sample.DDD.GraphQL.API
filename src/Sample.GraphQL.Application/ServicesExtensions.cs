@@ -12,7 +12,8 @@ namespace Sample.GraphQL.Application
             .AddGraphQLServer()
             .RegisterDbContext<CinemaDbContext>()
             .AddQueryType<ShowtimesQuery>()
-            .AddFiltering(); 
+            .AddFiltering()
+            .AddSorting();
 
             return services;
 

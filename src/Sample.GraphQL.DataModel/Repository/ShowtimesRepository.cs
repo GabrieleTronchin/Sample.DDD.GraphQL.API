@@ -25,16 +25,18 @@ internal class ShowtimesRepository : IShowtimesRepository
              throw new InvalidOperationException($"System could not find any {nameof(ShowtimeEntity.Id)} with value {id}");
     }
 
-
-    public async Task<IEnumerable<ShowtimeEntity>> GetAllAsync(Expression<Func<ShowtimeEntity, bool>> filter, CancellationToken cancel)
+    public async Task<IEnumerable<ShowtimeEntity>> GetAsync(CancellationToken cancel)
     {
-        if (filter == null)
-        {
             return await _context.Showtimes
             .Include(x => x.Movie)
             .Include(x => x.Seats)
             .ToListAsync(cancel);
-        }
+
+    }
+
+    public async Task<IEnumerable<ShowtimeEntity>> GetAsync(Expression<Func<ShowtimeEntity, bool>> filter, CancellationToken cancel)
+    {
+
         return await _context.Showtimes
             .Include(x => x.Movie)
             .Include(x => x.Seats)
