@@ -11,14 +11,32 @@ public static class SeedDb
         var context = serviceScope.ServiceProvider.GetService<CinemaDbContext>() ?? throw new NullReferenceException($"Cannot find any service for {nameof(CinemaDbContext)}");
         context.Database.EnsureCreated();
 
-        var movie = MovieEntity.Create("Dune Part 2",
+        var dune2Movie = MovieEntity.Create("Dune Part 2",
+            "Timothée Chalamet , Zendaya , Rebecca Ferguson , Josh Brolin , Austin Butler",
+            "IMDB-02",
+            DateTime.UtcNow.AddDays(-15));
+
+        context.Movies.Add(dune2Movie);
+
+
+        var dune1Movie = MovieEntity.Create("Dune Part 1",
             "Timothée Chalamet , Zendaya , Rebecca Ferguson , Josh Brolin , Austin Butler",
             "IMDB-01",
-            DateTime.UtcNow.AddDays(-15));
-        context.Movies.Add(movie);
+            DateTime.UtcNow.AddDays(-10));
 
-        var showTime = ShowtimeEntity.Create(movie, DateTime.UtcNow);
-        context.Showtimes.Add(showTime);
+        context.Movies.Add(dune1Movie);
+
+        var showTime1 = ShowtimeEntity.Create(dune1Movie, DateTime.UtcNow);
+        context.Showtimes.Add(showTime1);
+
+        var showTime2 = ShowtimeEntity.Create(dune2Movie, DateTime.UtcNow);
+        context.Showtimes.Add(showTime2);
+
+        var showTime3 = ShowtimeEntity.Create(dune1Movie, DateTime.UtcNow);
+        context.Showtimes.Add(showTime3);
+
+        var showTime4 = ShowtimeEntity.Create(dune2Movie, DateTime.UtcNow);
+        context.Showtimes.Add(showTime3);
 
         context.SaveChanges();
     }
