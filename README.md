@@ -25,7 +25,7 @@ C# code:
       return result.AsQueryable();
   }
 
-Where All is the name of the entity on graphQL
+Where All is the name of the entity in GraphQL.
 
 ```graphql
 {
@@ -39,12 +39,14 @@ Where All is the name of the entity on graphQL
 }
 ```
 
-Here an image sample of hows appear:
+Here's a sample of the result:
+
 ![GraphQL Playground](.\assets\SampleResult1.png)
 
 ## Filtering
 
 C# code:
+```C#
         [UsePaging(IncludeTotalCount =true, DefaultPageSize =50)]
         [UseFiltering]
         public async Task<IQueryable<ShowtimeEntity>> GetShowTimes()
@@ -52,8 +54,8 @@ C# code:
             var result = await showtimesRepository.GetAsync(default);
             return result.AsQueryable();
         }
-
-Where ShowTimes is the name of the entity on graphQL
+```
+Where ShowTimes is the name of the entity in GraphQL.
 
 
 ```graphql
@@ -77,14 +79,17 @@ query {
 
 ```
 
-Here an image sample of hows appear:
+Here's a sample of the result:
+
+
 ![GetAll](.\assets\SchemaReference.png)
 
 You can refer to the Hot Chocolate documentation for guidance on implementing filtering: [Hot Chocolate - Fetching Data: Filtering](https://chillicream.com/docs/hotchocolate/v13/fetching-data/filtering)
 
 ## Pagination
 
-To provide pagination you should add totalCount and pageInfo args on the query, then you should add cursor thats enable to require the next page.
+To provide pagination, you should add totalCount and pageInfo arguments to the query. 
+Then, you should add a cursor to enable requesting the next page.
 
 
 Page 1:
@@ -146,5 +151,4 @@ query {
 
 ![Page1](.\assets\Pagination_Page2.png)
 
-
-https://graphql.org/learn/pagination/
+For more information on pagination in GraphQL, you can visit [GraphQL Pagination](https://graphql.org/learn/pagination/)
