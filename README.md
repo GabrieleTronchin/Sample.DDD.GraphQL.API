@@ -18,12 +18,13 @@ Here's an image of what you'll find:
 To create your first GraphQL query, you can use the following example:
 
 C# code:
-
+```C#
   public async Task<IQueryable<ShowtimeEntity>> GetAll()
   {
       var result = await showtimesRepository.GetAsync(default);
       return result.AsQueryable();
   }
+```
 
 Where All is the name of the entity in GraphQL.
 
