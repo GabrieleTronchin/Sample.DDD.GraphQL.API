@@ -11,7 +11,7 @@ public static class CinemaEndpoint
 
         app.MapGet("/Showtimes", async (IShowtimesRepository showtimesRepository) =>
         {
-            return await showtimesRepository.GetAllAsync(null, CancellationToken.None);
+            return await showtimesRepository.GetAsync(null, CancellationToken.None);
         });
 
 
