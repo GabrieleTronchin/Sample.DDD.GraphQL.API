@@ -1,7 +1,5 @@
 # Sample GraphQL API
 
-Status (In progress)
-
 This app is a sample API that exposes GraphQL. 
 I utilized the Hot Chocolate NuGet package for this purpose. With this package, we can also filter the endpoints.
 
