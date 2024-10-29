@@ -9,9 +9,9 @@ public static class CinemaEndpoint
     public static void AddEndpoints(this IEndpointRouteBuilder app)
     {
 
-        app.MapGet("/Showtimes", async (IShowtimesRepository showtimesRepository) =>
+        app.MapGet("/Showtimes", async (IShowtimesRepository showtimesRepository, CancellationToken cancellationToken) =>
         {
-            return await showtimesRepository.GetAsync(CancellationToken.None);
+            return await showtimesRepository.GetAsync(cancellationToken);
         });
 
 
