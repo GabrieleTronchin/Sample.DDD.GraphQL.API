@@ -7,7 +7,7 @@ The implementation uses Minimal API.
 
 The server architecture follows a kind of Domain-Driven Design (DDD), and the database is in-memory for testing purposes.
 
-When you start the app, you can use the built-in GraphQL playground by accessing http://localhost:5050/graphql/.
+When you start the app, you can use the built-in GraphQL playground by accessing http://localhost:5055/graphql/.
 
 Here's an image of what you'll find:
 
