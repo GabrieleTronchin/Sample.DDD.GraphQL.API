@@ -6,12 +6,12 @@ namespace Sample.GraphQL.Application.Endpoints;
 
 public static class CinemaEndpoint
 {
-    public static void AddEnpoints(this IEndpointRouteBuilder app)
+    public static void AddEndpoints(this IEndpointRouteBuilder app)
     {
 
         app.MapGet("/Showtimes", async (IShowtimesRepository showtimesRepository) =>
         {
-            return await showtimesRepository.GetAsync(null, CancellationToken.None);
+            return await showtimesRepository.GetAsync(CancellationToken.None);
         });
 
 

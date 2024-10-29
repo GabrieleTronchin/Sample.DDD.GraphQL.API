@@ -16,7 +16,7 @@ app.MapGraphQL();
 
 
 var rider = app.MapGroup("/v1/cinema");
-rider.AddEnpoints();
+rider.AddEndpoints();
 
 if (app.Environment.IsDevelopment())
 {
