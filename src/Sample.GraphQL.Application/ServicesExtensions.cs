@@ -10,7 +10,7 @@ namespace Sample.GraphQL.Application
         {
             services
             .AddGraphQLServer()
-            .RegisterDbContext<CinemaDbContext>()
+            .RegisterDbContextFactory<CinemaDbContext>()
             .AddQueryType<ShowtimesQuery>()
             .AddFiltering()
             .AddSorting();
