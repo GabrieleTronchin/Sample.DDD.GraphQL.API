@@ -4,8 +4,6 @@ using Sample.GraphQL.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 builder.Services.AddPersistence();
 builder.Services.AddPresentationLayer();
 
@@ -17,13 +15,6 @@ app.MapGraphQL();
 
 var rider = app.MapGroup("/v1/cinema");
 rider.AddEndpoints();
-
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
 
 SeedDb.Initialize(app);
 
