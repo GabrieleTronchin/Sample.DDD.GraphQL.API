@@ -1,6 +1,33 @@
-@Sample.GraphQL.API_HostAddress = http://localhost:5055
+@host = http://localhost:5055
 
-GET {{Sample.GraphQL.API_HostAddress}}/weatherforecast/
-Accept: application/json
+### Basic Selection Query - Get all showtimes with movie details
+POST {{host}}/graphql
+Content-Type: application/json
 
-###
+{
+  "query": "{ all { id sessionDate movieId movie { title stars releaseDate imdbId } } }"
+}
+
+### Filtering Query - Filter showtimes by movie title
+POST {{host}}/graphql
+Content-Type: application/json
+
+{
+  "query": "{ showTimes(where: { movie: { title: { eq: \"Dune Part 1\" } } }) { id sessionDate movie { title stars } } }"
+}
+
+### Pagination Query - First page (2 items)
+POST {{host}}/graphql
+Content-Type: application/json
+
+{
+  "query": "{ showTimes(first: 2) { totalCount pageInfo { hasNextPage endCursor } edges { cursor node { id sessionDate movie { title stars releaseDate imdbId } } } } }"
+}
+
+### Pagination Query - Next page using cursor
+POST {{host}}/graphql
+Content-Type: application/json
+
+{
+  "query": "{ showTimes(first: 2, after: \"<cursor>\") { totalCount pageInfo { hasNextPage endCursor } edges { cursor node { id sessionDate movie { title stars releaseDate imdbId } } } } }"
+}
